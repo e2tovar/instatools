@@ -12,4 +12,4 @@ How to use:
 2. run ` pip install -r requirements.txt `
 3. run the scripts you need
    e.g
-   `is_top.py 
+   `is_top.py `
