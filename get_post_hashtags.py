@@ -4,7 +4,7 @@ from instaloader import Instaloader, Post
 # function to extract all the hashtags in from first 5 comments 
 def extract_hashtags(text):    
     # the regular expression 
-    regex = "#(\w+)"
+    regex = r"#(\w+)"
     # extracting the hashtags
     hashtags_list = re.findall(regex, text)     
     return hashtags_list

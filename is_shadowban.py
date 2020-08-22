@@ -2,8 +2,15 @@ from instaloader import Instaloader, Post, Hashtag
 import get_post_hashtags as gh
 
 # Function to check i=wether a post is shadowbaned
-def is_shadowbane(hashtags_list):
+def is_shadowbaned(shortcode):
+    L = Instaloader()
+    POST = Post.from_shortcode(L.context, shortcode)
+    DATE = POST.date
+    #TODO regex from Link to get Shortcode
+    DATE = POST.date
+    hashtags_list = gh.get_hashtags(POST)
     shadow = False
+    print(hashtags_list)
     for h in hashtags_list:
         count = 0
         #status
@@ -35,9 +42,7 @@ def is_shadowbane(hashtags_list):
                     continue
 
 if __name__ == '__main__':
-    L = Instaloader()
     print('Paste the post link here:')
-    SHORTCODE = input()
-    POST = Post.from_shortcode(L.context, SHORTCODE)
-    DATE = POST.date
-    is_shadowbane(gh.get_hashtags(POST))
+    short_code = input()
+    is_shadowbaned(short_code)
+    
